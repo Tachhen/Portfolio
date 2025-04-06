@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-
     <title>Tenzing Gyalpo Tamang | Engineer & Developer</title>
-    
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <style>
-
         :root {
             --primary: #6C63FF;
             --secondary: #4D44DB;
@@ -28,8 +21,9 @@
             --nav-bg: rgba(255, 255, 255, 0.9);
             --footer-bg: #1E1E2C;
             --skill-bg: white;
+            --contact-dark: #2F2E41;
+            --contact-text: white;
         }
-
 
         [data-theme="dark"] {
             --text: #F9F9F9;
@@ -40,8 +34,9 @@
             --skill-bg: #2F2E41;
             --dark: #F9F9F9;
             --light: #1E1E2C;
+            --contact-dark: #F9F9F9;
+            --contact-text: #2F2E41;
         }
-
 
         * {
             margin: 0;
@@ -62,7 +57,6 @@
             scroll-behavior: smooth;
         }
         
-
         nav {
             position: fixed;
             top: 0;
@@ -131,7 +125,6 @@
             color: var(--text);
         }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -199,7 +192,6 @@
             100% { transform: translateY(0px); }
         }
 
-
         .section {
             padding: 6rem 5%;
         }
@@ -223,7 +215,6 @@
             border-radius: 2px;
         }
 
- 
         .about-content {
             display: flex;
             align-items: center;
@@ -281,7 +272,6 @@
             color: white;
             transform: translateY(-3px);
         }
-
 
         .projects-container {
             display: grid;
@@ -360,10 +350,9 @@
             color: white;
         }
 
-    
         .contact {
-            background-color: var(--dark);
-            color: white;
+            background-color: var(--contact-dark);
+            color: var(--contact-text);
             text-align: center;
             padding: 6rem 5%;
         }
@@ -404,10 +393,14 @@
         .email-link {
             background-color: var(--accent);
         }
-        https://github.com/Tachhen/Portfolio/blob/b9074b1960ba1a0c6b1a894a560b8c1247a30322/images/about.jpeg
+        
+        .github-link {
+            background-color: #333;
+        }
+        
+        .linkedin-link {
             background-color: #0077B5;
         }
-
 
         footer {
             text-align: center;
@@ -416,7 +409,6 @@
             color: #AAA;
             font-size: 0.9rem;
         }
-
 
         .theme-toggle {
             background: none;
@@ -434,6 +426,33 @@
             background-color: rgba(108, 99, 255, 0.1);
         }
 
+        .pokeball {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23fff" stroke="%23333" stroke-width="5"/><circle cx="50" cy="50" r="20" fill="%23fff" stroke="%23333" stroke-width="5"/><path d="M5,50 H95" stroke="%23333" stroke-width="5"/></svg>');
+            background-size: contain;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .pokemon-animation {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 9998;
+            opacity: 0;
+            animation: pokemonFloat 3s infinite;
+        }
+
+        @keyframes pokemonFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
 
         @keyframes fadeInUp {
             from {
@@ -462,7 +481,6 @@
         .delay-3 {
             animation-delay: 0.6s;
         }
-
 
         @media (max-width: 992px) {
             .hero h1 {
@@ -566,7 +584,6 @@
             }
         }
         
-  
         @media (max-width: 400px) {
             .hero h1 {
                 font-size: 1.8rem;
@@ -588,7 +605,6 @@
     </style>
 </head>
 <body>
-
     <nav id="navbar">
         <a href="#" class="logo">Tenzing</a>
         <div class="nav-links">
@@ -641,6 +657,8 @@
     </section>
 
 
+
+
     <section class="section" id="projects">
         <h2 class="section-title">My Projects</h2>
         <div class="projects-container">
@@ -667,7 +685,6 @@
         </div>
     </section>
 
-
     <section class="contact" id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
@@ -684,11 +701,9 @@
         </div>
     </section>
 
-
     <footer>
         <p>&copy; 2025 Tenzing Gyalpo Tamang. All rights reserved.</p>
     </footer>
-
 
     <script>
         const themeToggle = document.querySelector('.theme-toggle');
@@ -720,10 +735,6 @@
                 icon.classList.add('fa-moon');
             }
         }
-    </script>
-
-
-    <script>
 
         const navbar = document.getElementById('navbar');
         let lastScrollY = window.scrollY;
@@ -738,7 +749,6 @@
             lastScrollY = window.scrollY;
         });
         
-
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         
@@ -746,14 +756,12 @@
             navLinks.classList.toggle('active');
         });
         
-
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
         
-
         const fadeElements = document.querySelectorAll('.fade-in-up');
         
         const fadeObserver = new IntersectionObserver((entries) => {
@@ -767,6 +775,7 @@
         fadeElements.forEach(element => {
             fadeObserver.observe(element);
         });
+
     </script>
 </body>
 </html>
